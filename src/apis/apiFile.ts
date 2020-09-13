@@ -9,9 +9,10 @@ app.use(bodyParser.json());
 app.use(
   fileUpload({
     useTempFiles: true,
-   // tempFileDir: '/tmp/',
+    // tempFileDir: '/tmp/',
   })
 );
 app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/upload/:tipo/:id', UploadController.uploadProfile);
 export default app;
+/*hola*/
