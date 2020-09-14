@@ -104,7 +104,7 @@ const NegocioSchema: Schema = new Schema({
   },
   cateNego: {
     type: Schema.Types.ObjectId,
-    ref: 'CategoriaNegocio',
+    ref: 'CateNego',
     required: true,
   },
 });

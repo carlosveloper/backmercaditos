@@ -31,7 +31,7 @@ CategoriaNegocioSchema.plugin(uniqueValidator, {
 
 
 const CategoriaNegocio = mongoose.model<ICategoriaNegocio>(
-  'CategoriaNegocio',
+  'CateNego',
   CategoriaNegocioSchema
 );
 

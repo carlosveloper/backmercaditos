@@ -35,7 +35,7 @@ CategoriaProductoSchema.plugin(uniqueValidator, {
 });
 
 const CategoriaProducto = mongoose.model<ICategoriaProducto>(
-  'CategoriaProducto',
+  'CateProduc',
   CategoriaProductoSchema
 );
 
