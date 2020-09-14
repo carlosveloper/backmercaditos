@@ -7,6 +7,8 @@ import ApiAuth from './apis/apiAuth';
 import ApiFile from './apis/apiFile';
 import ApiUsuario from'./apis/apiUsuario';
 import ApiCategoria from './apis/apiCategoria';
+import ApiNegocio from './apis/apiNegocio';
+
 
 import process from './config/config'
 
@@ -70,6 +72,7 @@ app.use(ApiAuth);
 app.use(ApiFile);
 app.use(ApiUsuario);
 app.use(ApiCategoria);
+app.use(ApiNegocio);
 
 
 

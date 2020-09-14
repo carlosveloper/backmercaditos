@@ -6,6 +6,7 @@ export interface ICategoriaProducto extends Document {
   nombre: string;
   description: string;
   auth: Schema.Types.ObjectId;
+  negocio: Schema.Types.ObjectId;
 }
 
 const CategoriaProductoSchema: Schema = new Schema({
@@ -20,15 +21,18 @@ const CategoriaProductoSchema: Schema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Auth',
     required: true,
-    unique: true,
+  },
+  negocio: {
+    type: Schema.Types.ObjectId,
+    ref: 'Negocio',
+    required: true,
   },
 });
+
 
 CategoriaProductoSchema.plugin(uniqueValidator, {
   message: 'Error, El {PATH} ya existe.',
 });
-
-
 
 const CategoriaProducto = mongoose.model<ICategoriaProducto>(
   'CategoriaProducto',
