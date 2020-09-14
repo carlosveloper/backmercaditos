@@ -30,9 +30,9 @@ export const addAuthentication = (req: Request, res: Response) => {
 export const allAuthentication = (req: any, res: Response) => {
   const auth = MAuthentication.find((err: any, userAuth: any) => {
     if (err) {
-      res.json(err);
+      res.status(401).json(err);
     } else {
-      res.json(userAuth);
+     res.status(200).json(userAuth);
     }
   });
 };

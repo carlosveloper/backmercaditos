@@ -10,6 +10,18 @@ export const estadosUsuarioValidos = {
 
 
 
+export const estadosNegociosValidos = {
+  values: ['A', 'I', 'B','P',],
+  message: '{VALUE} no es un estado de negocio válido',
+};
+
+
+export const estadosProductosValidos = {
+  values: ['A', 'I', 'B', ],
+  message: '{VALUE} no es un estado de negocio válido',
+};
+
+
 
 
 export const rolesUsuarioValidos = {

@@ -1,9 +1,11 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import MUsuario from '../schema/usuario';
+import * as ROLES from '../schema/roles';
 
-////
-//// Verificar Token
-////
+// =====================
+// Verifica Token
+// =====================
 
 export const verificaToken = (
   request: any,
@@ -23,4 +25,40 @@ export const verificaToken = (
     console.log(request.auth);
     next();
   });
+};
+
+// =====================
+// Verifica AdminRole
+// =====================
+export const verificaAdminRole = (
+  req: any,
+  res: Response,
+  next: NextFunction
+) => {
+  let Idusuario = req.auth._id;
+
+  
+  const user = MUsuario.findOne(
+    { auth: Idusuario },
+    (err: any, usuario: any) => {
+      if (err) {
+        res.json({ err, ok: false, message: 'Posible error reference id' });
+      } else {
+        if (!usuario) {
+          return res
+            .status(400)
+            .json({ message: 'El auth no existe', ok: false });
+        }
+
+        if (usuario.rol=== ROLES.rolesUsuarioValidos.values[0]) {
+          next();
+        } else {
+          return res.json({
+            ok: false,
+            message: 'El usuario no es administrador',
+          });
+        }
+      }
+    }
+  );
 };

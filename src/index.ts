@@ -6,6 +6,7 @@ import * as AuthController from './controller/autentication_controller';
 import ApiAuth from './apis/apiAuth';
 import ApiFile from './apis/apiFile';
 import ApiUsuario from'./apis/apiUsuario';
+import ApiCategoria from './apis/apiCategoria';
 
 import process from './config/config'
 
@@ -68,6 +69,7 @@ app.delete('/books/:id', BookController.deleteBook);
 app.use(ApiAuth);
 app.use(ApiFile);
 app.use(ApiUsuario);
+app.use(ApiCategoria);
 
 
 
