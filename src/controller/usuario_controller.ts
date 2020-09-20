@@ -7,12 +7,10 @@ export const addUser = (req: Request, res: Response) => {
   const user = new MUsuario(req.body);
   user.save((err: any) => {
     if (err) {
-      console.log(err.code);
       res
         .status(401)
-        .json({ err, ok: false, message: 'Posible error reference id' });
+        .json({ err, ok: false });
     } else {
-      console.log(user);
       res.status(201).json(user);
     }
   });
@@ -33,17 +31,15 @@ export const getUserToken = (req: any, res: Response) => {
 
 export const getUserID = (req: any, res: Response) => {
   let id = req.query.id;
-  console.log('el id es');
-  console.log(id);
+ 
 
   const auth = MUsuario.findOne(
     { auth: req.query.id },
     (err: any, usuario: any) => {
       if (err) {
-        console.log('error');
         res
           .status(401)
-          .json({ err, ok: false, message: 'Posible error reference id' });
+          .json({ err, ok: false });
       } else {
         if (!usuario) {
           return res

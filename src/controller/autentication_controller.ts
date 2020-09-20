@@ -12,10 +12,8 @@ export const addAuthentication = (req: Request, res: Response) => {
     const auth = new MAuthentication(req.body);
     auth.save((err: any) => {
       if (err) {
-        console.log(err.code);
         res.status(401).json(err);
       } else {
-        console.log(auth);
         res.status(201).json(auth);
       }
     });
