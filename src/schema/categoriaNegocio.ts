@@ -20,7 +20,6 @@ const CategoriaNegocioSchema: Schema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Auth',
     required: true,
-    unique: true,
   },
 });
 
