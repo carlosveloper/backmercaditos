@@ -14,8 +14,6 @@ app.post('/productos', ProductosController.addProducto);
 app.get('/productos', ProductosController.allProductos);
 
 
-app.get('/misproductos/:id', ProductosController.allMisProductos);
 
-app.post('/misproductos', ProductosController.addMisProductos);
 
 export default app;

@@ -8,7 +8,7 @@ import ApiFile from './apis/apiFile';
 import ApiUsuario from'./apis/apiUsuario';
 import ApiCategoria from './apis/apiCategoria';
 import ApiNegocio from './apis/apiNegocio';
-import ApiProductosPrueba from './apis/apiProductosPrueba';
+import ApiProductos from './apis/apiProductos';
 
 
 import process from './config/config'
@@ -74,7 +74,7 @@ app.use(ApiFile);
 app.use(ApiUsuario);
 app.use(ApiCategoria);
 app.use(ApiNegocio);
-app.use(ApiProductosPrueba);
+app.use(ApiProductos);
 
 
 

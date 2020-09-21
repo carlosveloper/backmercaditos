@@ -5,6 +5,7 @@ import uniqueValidator from 'mongoose-unique-validator';
 export interface ICategoriaNegocio extends Document {
   nombre: string;
   description: string;
+  estado: string;
   auth: Schema.Types.ObjectId;
 }
 

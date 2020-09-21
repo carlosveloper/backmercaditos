@@ -15,4 +15,10 @@ app.post(
   CategoriaController.addCategoria
 );
 
+app.get(
+  '/categoria',
+  VerificaToken.verificaToken,
+  CategoriaController.allCategoria
+);
+
 export default app;

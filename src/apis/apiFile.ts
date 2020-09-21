@@ -15,4 +15,3 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/upload/:tipo/:id', UploadController.uploadProfile);
 export default app;
-/*hola 2*/

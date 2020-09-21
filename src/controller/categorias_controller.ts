@@ -31,3 +31,32 @@ export const addCategoria = (req: Request, res: Response) => {
     }
   });
 };
+
+export const allCategoria = (req: Request, res: Response) => {
+  let tipo = req.query.tipo;
+  console.log('entre');
+  if (tipo === 'NEGOCIO') {
+    MCategoriaNegocio.find((err: any, categoria: any) => {
+      if (err) {
+        console.log(err);
+        res.status(401).json(err);
+      } else {
+        res.status(200).json(categoria);
+      }
+    });
+  } else if (tipo === 'PRODUCTO') {
+    MCategoriaProducto.find((err: any, categoria: any) => {
+      if (err) {
+        console.log(err);
+        res.status(401).json(err);
+      } else {
+        res.status(200).json(categoria);
+      }
+    });
+  } else {
+    res.status(401).json({
+      message: 'El Tipo de categoria es invalida',
+      ok: false,
+    });
+  }
+};

@@ -5,8 +5,8 @@ import uniqueValidator from 'mongoose-unique-validator';
 export interface ICategoriaProducto extends Document {
   nombre: string;
   description: string;
+  estado:string;
   auth: Schema.Types.ObjectId;
-  negocio: Schema.Types.ObjectId;
 }
 
 const CategoriaProductoSchema: Schema = new Schema({
@@ -20,11 +20,6 @@ const CategoriaProductoSchema: Schema = new Schema({
   auth: {
     type: Schema.Types.ObjectId,
     ref: 'Auth',
-    required: true,
-  },
-  negocio: {
-    type: Schema.Types.ObjectId,
-    ref: 'Negocio',
     required: true,
   },
 });

@@ -88,8 +88,8 @@ const NegocioSchema: Schema = new Schema({
     minlength: 10,
     maxlength: 13,
   },
-  fotoPerfil: { type: String, required: 'la foto de Perfil es requerido' },
-  fotoPortada: { type: String, required: 'la foto de Portada es requerido' },
+  fotoPerfil: { type: String, required: false },
+  fotoPortada: { type: String, required: false },
   valoracionN: { type: Number, default: 0.0 },
   valoracionP: { type: Number, default: 0.0 },
   atencion: {
