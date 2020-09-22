@@ -8,7 +8,11 @@ export const addAuthentication = {
         in: 'body',
         description: 'El estado del usuario por defecto es A',
         schema: {
-          $ref: '#/definitions/Auth',
+          properties: {
+            user: { type: 'string' },
+            password: { type: 'string' },
+            estado: { type: 'string' },
+          },
         },
       },
     ],
