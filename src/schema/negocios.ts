@@ -77,8 +77,8 @@ const NegocioSchema: Schema = new Schema({
   descripcion: { type: String, required: 'la descripción es requerida' },
   estado: {
     type: String,
-    default: ROLES.estadosUsuarioValidos.values[0],
-    enum: ROLES.estadosUsuarioValidos,
+    default: ROLES.estadosNegociosValidos.values[0],
+    enum: ROLES.estadosNegociosValidos,
   },
   lat: { type: String, required: 'la latitud es requerida' },
   lng: { type: String, required: 'la latitud es requerida' },

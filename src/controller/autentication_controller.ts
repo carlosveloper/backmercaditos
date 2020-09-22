@@ -4,6 +4,8 @@ import MAuthentication from '../schema/auth';
 import * as Bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import process from '../config/config';
+import { IAuthentication } from '../schema/auth';
+
 
 export const addAuthentication = (req: Request, res: Response) => {
   try {
@@ -79,3 +81,5 @@ export const findAuthUserToken = (req: any, res: Response) => {
     }
   );
 };
+
+

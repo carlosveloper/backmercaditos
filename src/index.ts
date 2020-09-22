@@ -9,6 +9,8 @@ import ApiUsuario from'./apis/apiUsuario';
 import ApiCategoria from './apis/apiCategoria';
 import ApiNegocio from './apis/apiNegocio';
 import ApiProductos from './apis/apiProductos';
+import SwaggerApi from './documentacion/SwaggerApis';
+
 
 
 import process from './config/config'
@@ -75,6 +77,8 @@ app.use(ApiUsuario);
 app.use(ApiCategoria);
 app.use(ApiNegocio);
 app.use(ApiProductos);
+app.use(SwaggerApi);
+
 
 
 

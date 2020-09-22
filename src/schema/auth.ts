@@ -2,6 +2,10 @@ import mongoose, { Schema, Document } from 'mongoose';
 import * as ROLES from './roles';
 import uniqueValidator from 'mongoose-unique-validator';
 
+
+
+
+
 export interface IAuthentication extends Document {
   user: string;
   password: string;
@@ -18,6 +22,8 @@ const AuthenticationSchema: Schema = new Schema({
   },
 });
 
+
+
 AuthenticationSchema.plugin(uniqueValidator, {
   message: 'Error, El {PATH} ya existe.',
 });
@@ -29,4 +35,6 @@ const Authentication = mongoose.model<IAuthentication>(
 
 
 export default Authentication;
+
+
 
