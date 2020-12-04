@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import m2s from 'mongoose-to-swagger';
 import swaggerUi from 'swagger-ui-express';
 import * as SwaggerAuth from './SwaggerAuth';
+import * as SwaggerUsuario from './SwaggerUsuario';
 
 import MAuthentication from '../schema/auth';
 import MUsuario from '../schema/usuario';
@@ -32,6 +33,10 @@ app.use(
         name: 'Auth',
         description: 'API para los usuarios del sistema',
       },
+      {
+        name: 'Usuario',
+        description: 'API para los datos del usuario',
+      },
     ],
     schemes: ['http', 'https'],
     consumes: ['application/json'],
@@ -53,6 +58,7 @@ app.use(
       '/auth/': SwaggerAuth.allAuthentication,
       '/authToken': SwaggerAuth.findAuthUserToken,
       '/authFind': SwaggerAuth.findAuthUser,
+      '/user': SwaggerUsuario.addUser,
     },
     definitions: {
       Auth: m2s(MAuthentication),

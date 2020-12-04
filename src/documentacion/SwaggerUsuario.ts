@@ -1,17 +1,23 @@
-export const addAuthentication = {
+export const addUser = {
   post: {
-    tags: ['Auth'],
-    summary: 'Crea la Autenticación',
+    tags: ['Usuario'],
+    summary: 'Registro datos usuario',
     parameters: [
       {
-        name: 'Auth',
+        name: 'Datos Usuario',
         in: 'body',
-        description: 'El estado del usuario por defecto es A',
+        description: 'El campo auth es la relacion del id con la tabla AUTH',
         schema: {
           properties: {
-            user: { type: 'string' },
-            password: { type: 'string' },
-            estado: { type: 'string' },
+            nombres: { type: 'string' },
+            apellidos: { type: 'string' },
+            fotoPerfil: { type: 'string' },
+            rol: { type: 'string' },
+            direccion: { type: 'string' },
+            lat: { type: 'string' },
+            lng: { type: 'string' },
+            correo: { type: 'string' },
+            auth: { type: 'string' },
           },
         },
       },
@@ -20,7 +26,7 @@ export const addAuthentication = {
       '201': {
         description: 'OK',
         schema: {
-          $ref: '#/definitions/Auth',
+          $ref: '#/definitions/Usuario',
         },
       },
     },
@@ -36,10 +42,7 @@ export const allAuthentication = {
       '200': {
         description: 'OK',
         schema: {
-          type: 'array',
-          items: {
-            $ref: '#/definitions/Auth',
-          },
+          $ref: '#/definitions/Auth',
         },
       },
     },
